@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library of Twitter</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <textarea class="tweet" maxLength="140" cols="80" rows="3" disabled>
   </textarea>
-  <button onclick="generate()" class="generator" type="button">Generate</button>
+  <div>
+    <button onclick="generate()" class="btn generator" type="button">Generate</button>
+    <button onclick="tweet()" class="btn tweetbtn" type="button">Tweet</button>
+  </div>
   <script>
     function generate() {
       document.querySelector(".tweet").textContent = new Array(135).join().replace(/(.|$)/g, function() {
@@ -17,6 +21,10 @@
           Math.floor(Math.random() * alphabet.length)
         )
       }) + ' #lot';
+    }
+    function tweet() {
+      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent);
+      window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer');
     }
   </script>
 </body>
