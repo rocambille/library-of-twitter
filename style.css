@@ -28,6 +28,7 @@ body {
 
 .button {
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -38,6 +39,10 @@ body {
   font-size: 1rem;
   border-radius: 9999px;
   margin-right: 1rem;
+}
+
+.button:focus {
+  outline: 0
 }
 
 .generate {
