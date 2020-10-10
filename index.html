@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library of Twitter</title>
+</head>
+<body>
+  <textarea class="tweet" maxLength="140" cols="80" rows="3" disabled>
+  </textarea>
+  <button onclick="generate()" class="generator" type="button">Generate</button>
+  <script>
+    function generate() {
+      document.querySelector(".tweet").textContent = new Array(135).join().replace(/(.|$)/g, function() {
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
+        return alphabet.charAt(
+          Math.floor(Math.random() * alphabet.length)
+        )
+      }) + ' #lot';
+    }
+  </script>
+</body>
+</html>
