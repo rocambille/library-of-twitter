@@ -1,0 +1,39 @@
+.tweet {
+  border: 2px solid #777;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.btn {
+  color: #fff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+
+.generator {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.generator:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}
+
+.tweetbtn {
+  background-color: #1b95e0;
+  border-color: #1b95e0;
+}
+
+.tweetbtn:hover {
+  background-color: #0c7abf;
+  border-color: #117a8b;
+}
