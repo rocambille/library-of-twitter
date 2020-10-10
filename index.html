@@ -7,22 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <textarea class="tweet" maxLength="140" cols="80" rows="3" disabled>
-  </textarea>
-  <div>
-    <button onclick="generate()" class="btn generator" type="button">Generate</button>
-    <button onclick="tweet()" class="btn tweetbtn" type="button">Tweet</button>
+  <div class="container">
+    <textarea class="tweet" maxLength="280" cols="80" rows="6" placeholder="Take your change to generate the perfect tweet..."></textarea>
+    <div class="buttons">
+      <button onclick="generate()" class="button generate" type="button">Generate</button>
+      <button onclick="publish()" class="button publish" type="button">Tweet</button>
+    </div>
   </div>
   <script>
     function generate() {
-      document.querySelector(".tweet").textContent = new Array(135).join().replace(/(.|$)/g, function() {
+      document.querySelector(".tweet").textContent = new Array(275).join().replace(/(.|$)/g, function() {
         const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
         return alphabet.charAt(
           Math.floor(Math.random() * alphabet.length)
         )
       }) + ' #lot';
     }
-    function tweet() {
+    function publish() {
       const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent);
       window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer');
     }

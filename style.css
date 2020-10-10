@@ -1,10 +1,32 @@
-.tweet {
-  border: 2px solid #777;
-  border-radius: 4px;
-  padding: 10px;
+body {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
 
-.btn {
+.container {
+  border: 1px solid #e6ecf0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem .5rem;
+}
+
+.tweet {
+  color: #14171a;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #e6ecf0;
+  font-size: 1rem;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  align-self: flex-end;
+}
+
+.button {
   color: #fff;
   display: inline-block;
   font-weight: 400;
@@ -12,28 +34,29 @@
   vertical-align: middle;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
+  padding: .5rem 1rem;
   font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
+  border-radius: 9999px;
+  margin-right: 1rem;
 }
 
-.generator {
-  background-color: #17a2b8;
+.generate {
+  color: #17a2b8;
   border-color: #17a2b8;
 }
 
-.generator:hover {
-  background-color: #138496;
+.generate:hover {
+  color: #138496;
   border-color: #117a8b;
 }
 
-.tweetbtn {
+.publish {
   background-color: #1b95e0;
   border-color: #1b95e0;
+  font-weight: bold;
 }
 
-.tweetbtn:hover {
+.publish:hover {
   background-color: #0c7abf;
   border-color: #117a8b;
 }
