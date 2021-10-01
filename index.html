@@ -8,24 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <textarea class="tweet" maxLength="280" cols="80" rows="6" placeholder="Take your chance to generate the perfect tweet..."></textarea>
+    <textarea class="tweet" maxLength="280" cols="80" spellcheck="false" rows="8" placeholder="Take your chance to generate the perfect tweet..."></textarea>
     <div class="buttons">
-      <button onclick="generate()" class="button generate" type="button">Generate</button>
+      <button onclick="generate()" class="button generate" type="button" autofocus>Generate</button>
       <button onclick="publish()" class="button publish" type="button">Tweet</button>
     </div>
   </div>
-  <script>
+  <script async>
     function generate() {
       document.querySelector(".tweet").textContent = new Array(274).join().replace(/(.|$)/g, function() {
         const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
         return alphabet.charAt(
           Math.floor(Math.random() * alphabet.length)
         )
-      }) + ' #lot';
+      }) + ' #lot'
     }
     function publish() {
-      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent);
-      window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer');
+      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent)
+      window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
     }
   </script>
 </body>
