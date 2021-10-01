@@ -31,8 +31,7 @@ body {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   flex: 1;
-  min-width: 100%;
-  max-width: 100%;
+  resize: none;
 }
 
 .buttons {
