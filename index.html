@@ -1,32 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library of Twitter</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <textarea class="tweet" maxLength="280" cols="80" spellcheck="false" rows="8" placeholder="Take your chance to generate the perfect tweet..."></textarea>
-    <div class="buttons">
-      <button onclick="generate()" class="button generate" type="button" autofocus>Generate</button>
-      <button onclick="publish()" class="button publish" type="button">Tweet</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library of Twitter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <textarea
+        class="tweet"
+        maxlength="280"
+        cols="80"
+        spellcheck="false"
+        rows="8"
+        placeholder="Take your chance to generate the perfect tweet..."
+      ></textarea>
+      <div class="buttons">
+        <button
+          onclick="tweetGenerate()"
+          class="button generate"
+          type="button"
+          autofocus
+        >
+          Generate
+        </button>
+        <button onclick="publish()" class="button publish" type="button">
+          Tweet
+        </button>
+      </div>
     </div>
-  </div>
-  <script async>
-    function generate() {
-      document.querySelector(".tweet").textContent = new Array(274).join().replace(/(.|$)/g, function() {
-        const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
-        return alphabet.charAt(
-          Math.floor(Math.random() * alphabet.length)
-        )
-      }) + ' #lot'
-    }
-    function publish() {
-      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent)
-      window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
-    }
-  </script>
-</body>
+    <script async>
+      // function generate() {
+      //   document.querySelector(".tweet").textContent =
+      //     new Array(274).join().replace(/(.|$)/g, function () {
+      //       const alphabet = "abcdefghijklmnopqrstuvwxyz., ";
+      //       return alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+      //     }) + " #lot";
+      // }
+      function publish() {
+        const tweetData = encodeURIComponent(
+          document.querySelector(".tweet").textContent
+        );
+        window.open(
+          `https://twitter.com/intent/tweet?text=${tweetData}`,
+          "_blank",
+          "noopener,noreferrer"
+        );
+      }
+
+      const tweetGenerate = async () => {
+        var url = "https://type.fit/api/quotes";
+        const response = await fetch(url);
+        console.log(typeof response);
+        const allQuotes = await response.json();
+        const indx = Math.floor(Math.random() * allQuotes.length);
+        const quote = allQuotes[indx].text;
+
+        document.querySelector(".tweet").textContent = quote.concat("#lot");
+      };
+    </script>
+    <script src="script.js"></script>
+  </body>
 </html>
