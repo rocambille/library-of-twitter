@@ -16,7 +16,7 @@
   </div>
   <script async>
     function generate() {
-      document.querySelector(".tweet").textContent = new Array(274).join().replace(/(.|$)/g, function() {
+      document.querySelector(".tweet").value = new Array(274).join().replace(/(.|$)/g, function() {
         const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
         return alphabet.charAt(
           Math.floor(Math.random() * alphabet.length)
