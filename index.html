@@ -16,7 +16,7 @@
   </div>
   <script async>
     function generate() {
-      document.querySelector(".tweet").textContent = new Array(274).join().replace(/(.|$)/g, function() {
+      document.querySelector(".tweet").value = new Array(274).join().replace(/(.|$)/g, function() {
         const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
         return alphabet.charAt(
           Math.floor(Math.random() * alphabet.length)
@@ -24,7 +24,7 @@
       }) + ' #lot'
     }
     function publish() {
-      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent)
+      const tweetData = encodeURIComponent(document.querySelector(".tweet").value)
       window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
     }
   </script>
