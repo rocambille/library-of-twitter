@@ -24,7 +24,7 @@
       }) + ' #lot'
     }
     function publish() {
-      const tweetData = encodeURIComponent(document.querySelector(".tweet").textContent)
+      const tweetData = encodeURIComponent(document.querySelector(".tweet").value)
       window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
     }
   </script>
