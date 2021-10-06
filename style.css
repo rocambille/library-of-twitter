@@ -12,6 +12,31 @@ body {
   min-height: 100vh;
 }
 
+header {
+  background-color: #1b95e0;
+}
+
+.main-title {
+  color: white;
+  font-size: 1.3em;
+}
+
+.inspiration {
+  font-style: italic;
+  font-size: 0.7em;
+  margin-bottom: 1.2rem;
+}
+
+.babel-link {
+  color: #0a4b55;
+  text-decoration: none;
+}
+
+.babel-link:hover {
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .container {
   border: 1px solid #e6ecf0;
   display: inline-flex;
