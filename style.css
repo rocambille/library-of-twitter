@@ -3,6 +3,8 @@
     --twitter-hover: #0c7abf;
     --grey: #e6ecf0;
     --not-white: #f8f9fc;
+    --black: #000000;
+
 }
 
 * {
@@ -173,3 +175,25 @@ a:hover {
     background-color: var(--twitter-hover);
     border-color: var(--twitter-hover);
 }
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+    background-color: var(--black);
+    color: var(--not-white);
+    }
+    
+    .tweet{
+        background-color: var(--black);
+        color: var(--grey);
+    }
+    
+    .card__generator, .card {
+        background-color: var(--black);
+    }
+    
+    .bg_twitter {
+        background-color: var(--twitter);
+        color:var(--not-white);
+    }
+    }
