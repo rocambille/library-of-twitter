@@ -179,8 +179,8 @@ a:hover {
 @media (prefers-color-scheme: dark) {
 
     body {
-    background-color: var(--black);
-    color: var(--not-white);
+        background-color: var(--black);
+        color: var(--not-white);
     }
     
     .tweet{
@@ -196,4 +196,4 @@ a:hover {
         background-color: var(--twitter);
         color:var(--not-white);
     }
-    }
+}
