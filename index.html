@@ -48,12 +48,16 @@
         </div>
     </div>
 </div>
-<script async>
+<script src="./bundle.js"></script>
+<script>
+    const random = require('random')
+
     function generate() {
+
         document.querySelector(".tweet").value = new Array(274).join().replace(/(.|$)/g, function () {
             const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
             return alphabet.charAt(
-                Math.floor(Math.random() * alphabet.length)
+                random.int((min = 0), (max = alphabet.length - 1))
             )
         }) + ' #lot'
     }
