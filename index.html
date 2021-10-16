@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library of Twitter</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./bundle.js"></script>
-    <script>
-        function generate() {
-            const random = require('random')
-            document.querySelector(".tweet").value = new Array(274).join().replace(/(.|$)/g, function() {
-                const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
-                return alphabet.charAt(
-                    random.int((min = 0), (max = alphabet.length - 1))
-                )
-            }) + ' #lot'
-        }
-
-        function publish() {
-            if (document.querySelector(".tweet").value !== "") {
-                const tweetData = encodeURIComponent(document.querySelector(".tweet").value)
-                window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
-            } else {
-                const tweetData = "Library of Twitter — https://github.com/rocambille/library-of-twitter"
-                window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
-            }
-        }
-    </script>
 </head>
-
 <body>
-    <div class="card__generator">
-        <textarea class="tweet" maxLength="280" cols="80" spellcheck="false" rows="6" placeholder="Take your chance to generate the perfect tweet..."></textarea>
-        <div class="buttons">
-            <button onclick="generate()" class="button generate" type="button" autofocus>Generate</button>
-            <button onclick="publish()" class="button publish" type="button">Tweet</button>
-        </div>
+<div class="card__generator">
+        <textarea class="tweet" maxLength="280" cols="80" spellcheck="false" rows="6"
+                  placeholder="Take your chance to generate the perfect tweet..."></textarea>
+    <div class="buttons">
+        <button onclick="generate()" class="button generate" type="button" autofocus>Generate</button>
+        <button onclick="publish()" class="button publish" type="button">Tweet</button>
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="card bg_twitter">
-                <div class="card__content">
-                    <h1>Library of Twitter</h1>
-                    <p>This project is come from The Library of Babel.</p>
-                    <p>
-                        "<i>The Library of Babel</i>" is a short story by Argentine author and librarian Jorge Luis Borges (1899–1986), conceiving of a universe in the form of a vast library containing all possible 410-page books of a certain format and
-                        character set.
-                    </p>
-                    <p>
-                        The story was originally published in Spanish in Borges' 1941 collection of stories El jardín de senderos que se bifurcan (The Garden of Forking Paths). That entire book was, in turn, included within his much-reprinted Ficciones (1944). Two English-language
-                        translations appeared approximately simultaneously in 1962, one by James E. Irby in a diverse collection of Borges's works titled Labyrinths and the other by Anthony Kerrigan as part of a collaborative translation of the entirety
-                        of Ficciones.
-                    </p>
-                    <p>You can read more in the <a href="https://en.m.wikipedia.org/wiki/The_Library_of_Babel" target="_blank" rel="noopener">Wikipedia</a>.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card__content">
-                    <p>This project is Open Source, this is mean you can freely contribute to the code!</p>
-                    <a href="https://github.com/rocambille/library-of-twitter" target="_blank" rel="noopener">Contribute to this project on GitHub</a>
-                </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div class="card bg_twitter">
+            <div class="card__content">
+                <h1>Library of Twitter</h1>
+                <p>This project is come from The Library of Babel.</p>
+                <p>
+                    "<i>The Library of Babel</i>" is a short story by Argentine author and
+                    librarian Jorge Luis Borges (1899–1986), conceiving of a universe in the form of a vast library
+                    containing all possible 410-page books of a certain format and character set.
+                </p>
+                <p>
+                    The story was originally published in Spanish in Borges' 1941 collection of stories El jardín de
+                    senderos que se bifurcan (The Garden of Forking Paths). That entire book was, in turn, included
+                    within his much-reprinted Ficciones (1944). Two English-language translations appeared approximately
+                    simultaneously in 1962, one by James E. Irby in a diverse collection of Borges's works titled
+                    Labyrinths and the other by Anthony Kerrigan as part of a collaborative translation of the entirety
+                    of Ficciones.
+                </p>
+                <p>You can read more in the <a href="https://en.m.wikipedia.org/wiki/The_Library_of_Babel" target="_blank" rel="noopener">Wikipedia</a>.
+                </p>
             </div>
         </div>
     </div>
+    <div class="col">
+        <div class="card">
+            <div class="card__content">
+                <p>This project is Open Source, this is mean you can freely contribute to the code!</p>
+                <a href="https://github.com/rocambille/library-of-twitter" target="_blank" rel="noopener">Contribute to this project on GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script async>
+    function generate() {
+        document.querySelector(".tweet").value = new Array(274).join().replace(/(.|$)/g, function () {
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz., '
+            return alphabet.charAt(
+                Math.floor(Math.random() * alphabet.length)
+            )
+        }) + ' #lot'
+    }
 
+    function publish() {
+        if (document.querySelector(".tweet").value !== "") {
+            const tweetData = encodeURIComponent(document.querySelector(".tweet").value)
+            window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
+        } else {
+            const tweetData = "Library of Twitter — https://github.com/rocambille/library-of-twitter"
+            window.open(`https://twitter.com/intent/tweet?text=${tweetData}`, '_blank', 'noopener,noreferrer')
+        }
+    }
+</script>
 </body>
-
 </html>
