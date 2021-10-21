@@ -2,8 +2,10 @@
 	--twitter: #1b95e0;
 	--twitter-hover: #0c7abf;
 	--grey: #e6ecf0;
+	--dark-grey: #292f33;
 	--not-white: #f8f9fc;
 	--black: #000000;
+	--border-radius: 9999px;
 }
 
 * {
@@ -57,7 +59,7 @@ a:hover {
 }
 
 .card__generator {
-	border: 1px solid #e6ecf0;
+	border: 1px solid var(--grey);
 	background-color: white;
 	display: inline-flex;
 	flex-direction: column;
@@ -90,7 +92,7 @@ a:hover {
 
 .tweet {
 	color: #242525;
-	background-color: #fff;
+	background-color: white;
 	border: none;
 	border-bottom: 1px solid var(--grey);
 	font-size: 1rem;
@@ -164,7 +166,7 @@ a:hover {
 	vertical-align: middle;
 	padding: 0.5rem 1rem;
 	border: 1px solid var(--twitter);
-	border-radius: 9999px;
+	border-radius: var(--border-radius);
 	transition: all 0.17s ease-in-out;
 }
 
@@ -185,17 +187,17 @@ a:hover {
 }
 
 .toggle-label:first-of-type {
-	border-radius: 9999px 0 0 9999px;
+	border-radius: var(--border-radius) 0 0 var(--border-radius);
 	margin-right: 0rem;
 }
 
 .toggle-label:last-of-type {
-	border-radius: 0 9999px 9999px 0;
+	border-radius: 0 var(--border-radius) var(--border-radius) 0;
 	margin-left: -2px;
 }
 
 .button {
-	color: #fff;
+	color: white;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 400;
@@ -205,7 +207,7 @@ a:hover {
 	border: 1px solid transparent;
 	padding: 0.5rem 1.7rem;
 	font-size: 1rem;
-	border-radius: 9999px;
+	border-radius: var(--border-radius);
 	transition: 0.17s;
 }
 
@@ -237,7 +239,6 @@ a:hover {
 
 @media (max-width: 495px) {
 	.buttons {
-		/* display: flex; */
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
@@ -261,18 +262,18 @@ a:hover {
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: var(--black);
+		background-color: var(--dark-grey);
 		color: var(--not-white);
 	}
 
 	.tweet {
-		background-color: var(--black);
+		background-color: var(--dark-grey);
 		color: var(--grey);
 	}
 
 	.card__generator,
 	.card {
-		background-color: var(--black);
+		background-color: var(--dark-grey);
 	}
 
 	.bg_twitter {
