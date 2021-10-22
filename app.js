@@ -32,7 +32,7 @@ async function generateWords() {
 	const keys = Object.keys(data);
 	let tweet = "";
 	let randomWord = keys[Math.floor(Math.random() * keys.length)];
-	while (tweet.length + randomWord.length < 174) {
+	while (tweet.length + randomWord.length < 274) {
 		tweet += randomWord;
 		tweet += " ";
 		randomWord = keys[Math.floor(Math.random() * keys.length)];
