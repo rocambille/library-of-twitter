@@ -1,283 +1,242 @@
 :root {
-	--twitter: #1b95e0;
-	--twitter-hover: #0c7abf;
-	--grey: #e6ecf0;
-	--dark-grey: #292f33;
-	--not-white: #f8f9fc;
-	--black: #000000;
-	--border-radius: 9999px;
+  --twitter: #1b95e0;
+  --twitter-hover: #0c7abf;
+  --grey: #e6ecf0;
+  --dark-grey: #292f33;
+  --not-white: #f8f9fc;
+  --black: #000000;
+  --border-radius: 9999px;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-		Noto Sans, sans-serif, cursive, -apple-system, BlinkMacSystemFont,
-		Roboto, "Helvetica Neue", sans-serif;
-	font-feature-settings: "tnum";
-	scroll-behavior: smooth;
-	font-size: 16px;
-	word-spacing: 2px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, cursive, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-feature-settings: "tnum";
+  scroll-behavior: smooth;
+  font-size: 16px;
+  word-spacing: 2px;
 }
 
 body {
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	background-color: var(--not-white);
-	padding: 3rem 18%;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 128ch;
+  display: grid;
+  gap: 1rem;
+  background-color: var(--not-white);
 }
 
-@media (max-width: 1300px) {
-	body {
-		padding: 2rem 5%;
-	}
-}
-
-@media (max-width: 900px) {
-	body {
-		padding: 0.7rem 1%;
-	}
+@media (min-width: 64ch) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 h1 {
-	font-size: 1.9rem;
-	user-select: none;
+  font-size: 1.9rem;
+  user-select: none;
 }
 
 a {
-	color: var(--twitter);
-	transition: 0.3s;
-	text-decoration: none;
+  color: var(--twitter);
+  transition: 0.3s;
+  text-decoration: none;
 }
 
 a:hover {
-	color: var(--twitter-hover);
+  color: var(--twitter-hover);
 }
 
 .card__generator {
-	border: 1px solid var(--grey);
-	background-color: white;
-	display: inline-flex;
-	flex-direction: column;
-	align-items: stretch;
-	padding: 1rem 0.5rem;
-	flex: 1;
-}
-
-.row {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-}
-
-.col {
-	grid-row: auto;
-	max-width: 100%;
-	margin: 1rem 0;
-}
-
-@media (max-width: 900px) {
-	.row {
-		grid-gap: unset;
-	}
-
-	.col {
-		grid-column: 1/6;
-	}
+  border: 1px solid var(--grey);
+  background-color: white;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 1rem 0.5rem;
+  grid-column: 1 / -1;
 }
 
 .tweet {
-	color: #242525;
-	background-color: white;
-	border: none;
-	border-bottom: 1px solid var(--grey);
-	font-size: 1rem;
-	padding: 1rem 0.4rem 1rem;
-	margin-bottom: 1rem;
-	flex: 1;
-	resize: none;
+  color: #242525;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid var(--grey);
+  font-size: 1rem;
+  padding: 1rem 0.4rem 1rem;
+  margin-bottom: 1rem;
+  flex: 1;
+  resize: none;
+  width: 100%;
 }
 
 .card {
-	background-color: white;
-	display: block;
-	border-radius: 5px;
-	padding: 15px 8px;
-	border: 1px solid var(--grey);
-	min-height: 33rem;
-}
-
-.card__content {
-	padding: 0 2rem;
-}
-
-@media (max-width: 900px) {
-	.card {
-		min-height: 10rem;
-	}
-	.card__content {
-		padding: 0 0.7rem;
-	}
+  background-color: white;
+  display: block;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  border: 1px solid var(--grey);
 }
 
 .bg_twitter {
-	background-color: var(--twitter);
-	color: white;
+  background-color: var(--twitter);
+  color: white;
 }
 
 .bg_twitter a {
-	color: white;
-	text-decoration: underline;
+  color: white;
+  text-decoration: underline;
 }
 
 .buttons {
-	display: inline-flex;
-	flex-direction: row;
-	justify-content: space-between;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .toggle-switch,
 .round-buttons {
-	font-size: 0;
-	margin: 0 1rem;
+  font-size: 0;
+  margin: 0 1rem;
 }
 
 .toggle {
-	position: absolute;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
 }
 
 .toggle-label {
-	background-color: transparent;
-	color: var(--twitter);
-	display: inline-block;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1;
-	text-align: center;
-	vertical-align: middle;
-	padding: 0.5rem 1rem;
-	border: 1px solid var(--twitter);
-	border-radius: var(--border-radius);
-	transition: all 0.17s ease-in-out;
+  background-color: transparent;
+  color: var(--twitter);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--twitter);
+  border-radius: var(--border-radius);
+  transition: all 0.17s ease-in-out;
 }
 
 .toggle-label:hover {
-	cursor: pointer;
-	color: var(--twitter-hover);
-	border-color: var(--twitter-hover);
+  cursor: pointer;
+  color: var(--twitter-hover);
+  border-color: var(--twitter-hover);
 }
 
 .toggle:checked + .toggle-label {
-	color: white;
-	background-color: var(--twitter);
+  color: white;
+  background-color: var(--twitter);
 }
 
 .toggle:checked + .toggle-label:hover {
-	color: white;
-	background-color: var(--twitter-hover);
+  color: white;
+  background-color: var(--twitter-hover);
 }
 
 .toggle-label:first-of-type {
-	border-radius: var(--border-radius) 0 0 var(--border-radius);
-	margin-right: 0rem;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  margin-right: 0rem;
 }
 
 .toggle-label:last-of-type {
-	border-radius: 0 var(--border-radius) var(--border-radius) 0;
-	margin-left: -2px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  margin-left: -2px;
 }
 
 .button {
-	color: white;
-	cursor: pointer;
-	display: inline-block;
-	font-weight: 400;
-	text-align: center;
-	vertical-align: middle;
-	background-color: transparent;
-	border: 1px solid transparent;
-	padding: 0.5rem 1.7rem;
-	font-size: 1rem;
-	border-radius: var(--border-radius);
-	transition: 0.17s;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.5rem 1.7rem;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  transition: 0.17s;
 }
 
 .button:focus {
-	outline: 0;
+  outline: 0;
 }
 
 .generate {
-	color: var(--twitter);
-	border-color: var(--twitter);
+  color: var(--twitter);
+  border-color: var(--twitter);
 }
 
 .generate:hover {
-	color: var(--twitter-hover);
-	border-color: var(--twitter-hover);
+  color: var(--twitter-hover);
+  border-color: var(--twitter-hover);
 }
 
 .publish {
-	background-color: var(--twitter);
-	border-color: var(--twitter);
-	font-weight: bold;
-	margin-left: 1rem;
+  background-color: var(--twitter);
+  border-color: var(--twitter);
+  font-weight: bold;
+  margin-left: 1rem;
 }
 
 .publish:hover {
-	background-color: var(--twitter-hover);
-	border-color: var(--twitter-hover);
+  background-color: var(--twitter-hover);
+  border-color: var(--twitter-hover);
 }
 
 @media (max-width: 495px) {
-	.buttons {
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-	}
-	.button {
-		margin-top: 1rem;
-	}
+  .buttons {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .button {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 300px) {
-	.round-buttons {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-	}
-	.publish {
-		margin-left: 0;
-	}
+  .round-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .publish {
+    margin-left: 0;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	body {
-		background-color: var(--dark-grey);
-		color: var(--not-white);
-	}
+  body {
+    background-color: var(--dark-grey);
+    color: var(--not-white);
+  }
 
-	.tweet {
-		background-color: var(--dark-grey);
-		color: var(--grey);
-	}
+  .tweet {
+    background-color: var(--dark-grey);
+    color: var(--grey);
+  }
 
-	.card__generator,
-	.card {
-		background-color: var(--dark-grey);
-	}
+  .card__generator,
+  .card {
+    background-color: var(--dark-grey);
+  }
 
-	.bg_twitter {
-		background-color: var(--twitter);
-		color: var(--not-white);
-	}
+  .bg_twitter {
+    background-color: var(--twitter);
+    color: var(--not-white);
+  }
 }
